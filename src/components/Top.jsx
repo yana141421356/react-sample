@@ -1,10 +1,6 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 
-const Top = () => {
-    const location = useLocation();
-    const { userid } = location.state || {};
-
+const Top = ({ userid }) => {
     return (
     <div>
       <h1>Welcome to the TOP page</h1>

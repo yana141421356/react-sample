@@ -21,16 +21,18 @@ const App = () => {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
-  const navigate = useCallback((pathname, state = {}) => {
+  const navigate = useCallback((pathname, options = {}) => {
+    const state = options.state ?? {};
     window.history.pushState(state, "", pathname);
     setRoute({ pathname, state });
   }, []);
 
-  switch (route.pathname) {
+  const normalizedPath = route.pathname.replace(/\/+$/, "") || "/";
+  switch (normalizedPath) {
     case "/otp":
-      return <Otp navigate={navigate} userid={route.state?.state?.userid} />;
+      return <Otp navigate={navigate} userid={route.state?.userid} />;
     case "/top":
-      return <Top userid={route.state?.state?.userid} />;
+      return <Top userid={route.state?.userid} />;
     default:
       return <Login navigate={navigate} />;
   }

@@ -1,3 +1,4 @@
+
 {
   "name": "react-sample",
   "version": "0.1.0",
@@ -38,6 +39,9 @@
     ]
   },
   "overrides": {
-    "postcss": "8.5.18"
+    "postcss": "8.5.18",
+    "shell-quote": "1.9.0",
+    "websocket-driver": "0.7.5"
   }
 }
+

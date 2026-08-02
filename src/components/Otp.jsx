@@ -1,13 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import '../css/Otp.css';
 
-const Otp = () => {
+const Otp = ({ navigate, userid }) => {
   const [authCode, setAuthCode] = useState('');
-  const navigate = useNavigate(); 
-  const location = useLocation();
-  const { userid } = location.state || {};
 
   const handleSubmit = async (e) => {
     e.preventDefault();

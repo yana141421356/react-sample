@@ -1,12 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../css/Login.css';
 
-const Login = () => {
+const Login = ({ navigate }) => {
   const [userid, setUserid] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     // 本来はここで認証APIを呼び出します
